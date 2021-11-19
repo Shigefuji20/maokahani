@@ -6,7 +6,7 @@
 
 
 <div class="float-right">
-    <a href="{{ '/users/create' }}" class="btn btn-primary">
+    <a href="{{ '/venue/create' }}" class="btn btn-primary">
         Add New Reservation
     </a>
 </div>
@@ -24,7 +24,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($users as $u)
+        @foreach($venue as $u)
 
         <tr>
             <td>{{$u->id}}</td>
@@ -34,7 +34,7 @@
             <td>{{$u->capacity}}</td>
             <td>{{$u->price}}</td>
             <td>
-                <a href="{{ url('/users/edit', ['id'=>$u]) }}" class="btn btn-secondary btn-sm">...</a>
+                <a href="{{ url('/venue/edit', ['id'=>$u]) }}" class="btn btn-secondary btn-sm">...</a>
             </td>
         </tr>
 
@@ -42,6 +42,6 @@
     </tbody>
 </table>
 
-{{ $users->links() }}
+{{ $venue->links() }}
 
 @stop

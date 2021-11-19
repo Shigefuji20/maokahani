@@ -3,17 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
+use App\venue;
 
-class UserController extends Controller
+class venueController extends Controller
 {
     public function index() {
-        $users = User::latest()->paginate(10);
-        return view('users.index', ['users'=>$users]);
+        $venue = venue::latest()->paginate(10);
+        return view('venue.index', ['venue'=>$venue]);
     }
 
     public function create() {
-        return view('users.create');
+        return view('venue.create');
     }
 
     public function store(Request $request) {
@@ -26,7 +26,7 @@ class UserController extends Controller
             'price' => 'required'
         ]);
 
-        User::create([
+        venue::create([
             'lname' => $request['lname'],
             'fname' => $request['fname'],
             'address' => $request['address'],
@@ -35,30 +35,30 @@ class UserController extends Controller
 
         ]);
 
-        return redirect('/users')->with('info', 'A new reservation has been created.');
+        return redirect('/venue')->with('info', 'A new reservation has been created.');
 
     }
     public function edit($id) {
-        $user = User::find($id);
+        $venue = venue::find($id);
 
-        return view('users.edit', ['user'=>$user]);
+        return view('venue.edit', ['venue'=>$venue]);
     }
 
     public function update(Request $request, $id) {
-        $user = User::find($id);
+        $venue = venue::find($id);
 
-        $user->update($request->all());
+        $venue->update($request->all());
 
-        return redirect('/users')->with('info', "The record of $user->fname $user->lname has been updated. ");
+        return redirect('/venue')->with('info', "The record of $venue->fname $venue->lname has been updated. ");
     }
 
     public function delete(Request $request) {
-        $userId = $request['user_id'];
-        $user = User::find($userId);
-        $name = $user->lname . ", " .  $user->fname;
+        $venueId = $request['venue_id'];
+        $venue = venue::find($venueId);
+        $name = $venue->lname . ", " .  $venue->fname;
 
-        $user->delete();
+        $venue->delete();
 
-        return redirect('/users')->with('info', "The reservation $name has ben delated");
+        return redirect('/venue')->with('info', "The reservation $name has ben delated");
     }
 }

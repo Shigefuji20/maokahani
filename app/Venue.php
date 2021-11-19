@@ -1,10 +1,10 @@
 <?php
 
 namespace App;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Foundation\Auth\Venue as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class Venue extends Authenticatable
 {
     use Notifiable;
 
@@ -18,9 +18,9 @@ class User extends Authenticatable
     ];
 
     public static function list() {
-        $users = User::orderByRaw('lname, fname')->get();
+        $venue = User::orderByRaw('lname, fname')->get();
         $list = [];
-        foreach($users as $u) {
+        foreach($venue as $u) {
             $list[$u->id] = $u->lname . ". " . $u->fname;
         }
         return $list;

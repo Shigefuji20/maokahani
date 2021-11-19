@@ -2,19 +2,19 @@
 
 @section('content')
     <!-- Modal -->
-    <div class="modal fade" id="deleteUserModal" tabindex="-1" aria-labelledby="deleteUserModalLabel" aria-hidden="true">
+    <div class="modal fade" id="delete`Venue`Modal" tabindex="-1" aria-labelledby="delete`Venue`ModalLabel" aria-hidden="true">
         <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-            <h5 class="modal-title" id="deleteUserModalLabel">Delete Reservation - {{$user->lname}}, {{$user->fname}}    </h5>
+            <h5 class="modal-title" id="delete`Venue`ModalLabel">Delete Reservation - {{$`venue`->lname}}, {{$venue->fname}}    </h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
             </div>
-            {!! Form::open(['url'=>'/users', 'method'=>'delete']) !!}
+            {!! Form::open(['url'=>'/Venue', 'method'=>'delete']) !!}
             <div class="modal-body">
                 Are you sure you want to delete this Reservation?
-                {{ Form::hidden('user_id', $user->id)}}
+                {{ Form::hidden('venue_id', $venue->id)}}
             </div>
             <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -25,17 +25,17 @@
         </div>
     </div>
 
-    <h1>Edit User {{ $user->lname }}, {{ $user->fname }}</h1>
+    <h1>Edit venue {{ $venue->lname }}, {{ $venue->fname }}</h1>
 
     <div class="row">
         <div class="col-md-5">
-            {!! Form::model($user, ['url'=>"/users/$user->id", 'method'=>'patch']) !!}
+            {!! Form::model($venue, ['url'=>"/Venue/$venue->id", 'method'=>'patch']) !!}
 
-            @include('users._form')
+            @include('Venue._form')
 
             <div class="form-group">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteUserModal">
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deletevenueModal">
                     Delete Reservation
                 </button>
                 <button class="btn btn-primary float-right">

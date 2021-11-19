@@ -2,7 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\User;
+use App\Venue;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 
@@ -17,7 +17,7 @@ use Illuminate\Support\Str;
 |
 */
 
-$factory->define(User::class, function (Faker $faker) {
+$factory->define(Venue::class, function (Faker $faker) {
     return [
         'lname' => $faker->lastName,
         'fname' => $faker->firstName,

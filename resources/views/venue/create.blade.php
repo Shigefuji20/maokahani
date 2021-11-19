@@ -6,9 +6,9 @@
 
     <div class="row">
         <div class="col-md-5">
-            {!! Form::open(['url'=>'/users', 'method'=>'post']) !!}
+            {!! Form::open(['url'=>'/Venue', 'method'=>'post']) !!}
 
-            @include('users._form')
+            @include('Venue._form')
 
             <div class="form-group">
                 <button class="btn btn-primary float-right">

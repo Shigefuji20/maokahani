@@ -14,7 +14,7 @@
                     <a class="nav-link" href="{{url('/')}}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url('/users')}}">Reservation</a>
+                    <a class="nav-link" href="{{url('/Venue')}}">Reservation</a>
                 </li>
             </ul>
         </div>

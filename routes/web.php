@@ -15,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','SiteController@index');
 
-Route::get('/users', 'UserController@index');
-Route::post('/users', 'UserController@store');
-Route::patch('/users/{id}', 'UserController@update');
-Route::get('users/create', 'UserController@create');
-Route::get('/users/edit/{id}', 'UserController@edit');
-Route::delete('/users', 'UserController@delete');
+Route::get('/venue', 'VenueController@index');
+Route::post('/venue', 'VenueController@store');
+Route::patch('/venue/{id}', 'VenueController@update');
+Route::get('venue/create', 'VenueController@create');
+Route::get('/venue/edit/{id}', 'VenueController@edit');
+Route::delete('/venue', 'VenueController@delete');
